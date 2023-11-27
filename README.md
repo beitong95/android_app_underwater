@@ -1,5 +1,5 @@
 # CS598WSI Course Project
-
+# Please download the [asset](https://drive.google.com/file/d/1EeQR_MX8zZjK7Uyov5O3ANYhalta2RDm/view?usp=sharing) and extract contents into `/app/src/main/assets` folder. 
 
 # Below is the original README from Pytorch Android Example Repo
 # Semantic Image Segmentation DeepLabV3 with Mobile Interpreter on Android

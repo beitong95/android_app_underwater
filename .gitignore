@@ -12,5 +12,8 @@
 /captures
 .externalNativeBuild
 .cxx
-/app/src/main/assets
+/app/src/main/assets/*
+!/app/src/main/assets/test1.jpg
+
+
 
