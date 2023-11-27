@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/fishExist"
+        android:layout_width="50dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/FishExistTitle"
+        app:layout_constraintStart_toEndOf="@+id/FishExistTitle" />
+
+    <TextView
+        android:id="@+id/FishExistTitle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:text="Fish?"
+        app:layout_constraintBottom_toBottomOf="@+id/fishCountTitle"
+        app:layout_constraintStart_toEndOf="@+id/fishCount" />
+
+    <TextView
+        android:id="@+id/inferenceTime"
+        android:layout_width="50dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/inferenceTimeTitle"
+        app:layout_constraintStart_toEndOf="@+id/inferenceTimeTitle" />
+
+    <TextView
+        android:id="@+id/inferenceTimeTitle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="96dp"
+        android:text="Time\nUsed:"
+        app:layout_constraintBottom_toTopOf="@+id/modelSpinner"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/segmentButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:text="Run Model"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/restartButton"
+        app:layout_constraintStart_toStartOf="@+id/buttonResize" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/segmentButton"
+        app:layout_constraintEnd_toEndOf="@+id/segmentButton"
+        app:layout_constraintStart_toStartOf="@+id/segmentButton"
+        app:layout_constraintTop_toTopOf="@+id/segmentButton" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="406dp"
+        android:layout_height="305dp"
+        android:contentDescription="@string/image_view"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/modelSpinner"
+        android:layout_width="219dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/segmentButton" />
+
+    <Button
+        android:id="@+id/restartButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:text="Next"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/buttonResize"
+        app:layout_constraintStart_toStartOf="@+id/buttonResize" />
+
+    <EditText
+        android:id="@+id/editWidth"
+        style="@android:style/Widget.EditText"
+        android:layout_width="50dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="text"
+        android:singleLine="true"
+        android:text="426"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/modelSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/modelSpinner" />
+
+    <EditText
+        android:id="@+id/editHeight"
+        android:layout_width="50dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="32dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="240"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/editWidth"
+        app:layout_constraintTop_toTopOf="@+id/editWidth" />
+
+    <Button
+        android:id="@+id/buttonResize"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Resize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/fishCount"
+        android:layout_width="50dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/fishCountTitle"
+        app:layout_constraintStart_toEndOf="@+id/fishCountTitle" />
+
+    <TextView
+        android:id="@+id/fishCountTitle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="Fish \nCount:"
+        app:layout_constraintBottom_toTopOf="@+id/modelSpinner"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
