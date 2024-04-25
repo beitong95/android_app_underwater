@@ -245,9 +245,9 @@ public class MainActivity extends AppCompatActivity implements Runnable {
 
                             resizeImage();
                         } else if (currentModelName.equals("VQGANEncode")) {
-                            mEncoder1 = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "encoder_scripted_optimized.ptl"));
-                            mEncoder2 = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "quant_conv_scripted_optimized.ptl"));
-                            mEncoder3 = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "quantize_scripted_optimized.ptl"));
+                            mEncoder1 = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "encoder_optimized.ptl"));
+                            mEncoder2 = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "quant_conv_optimized.ptl"));
+                            mEncoder3 = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "quantize_optimized.ptl"));
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -258,9 +258,9 @@ public class MainActivity extends AppCompatActivity implements Runnable {
 
                             displayImageCenterCropWithSize(currentIndex, compressImageSize);
                         } else if (currentModelName.equals("VQGANDecode")) {
-                            mDecoder1 = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "embedding_scripted.ptl"));
-                            mDecoder2 = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "post_quant_scripted.ptl"));
-                            mDecoder3 = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "decoder_scripted2.ptl"));
+                            mDecoder1 = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "embedding_optimized.ptl"));
+                            mDecoder2 = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "post_quant_conv_optimized.ptl"));
+                            mDecoder3 = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "decoder.ptl"));
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -271,7 +271,7 @@ public class MainActivity extends AppCompatActivity implements Runnable {
 
                             displayImageCenterCropWithSize(currentIndex, compressImageSize);
                         }
-                        else if (currentModelName.equals("transformer_scripted3.ptl")) {
+                        else if (currentModelName.equals("transformer_optimized.ptl")) {
                             mModule = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), currentModelName));
                             runOnUiThread(new Runnable() {
                                 @Override
@@ -504,7 +504,7 @@ public class MainActivity extends AppCompatActivity implements Runnable {
                 }
             });
         }
-        else if (currentModelName.equals("transformer_scripted3.ptl")) {
+        else if (currentModelName.equals("transformer_optimized.ptl")) {
             long[] gt = new long[] {425,256,854,389,329,972,901,184,969,1019,515,906,172,253,589,928,937,810,966,215,610,720,365,628,856,854,642,92,247,642,558,835,788,601,400,911,417,813,903,610,937,970,462,810,539,417,308,546,761,432,323,172,469,865,1012,663,725,548,873,40,868,548,737,393};
             long[] data = new long[] {425,320,854,388,264,972,965,188,713,1019,515,936,184,253,589,928,1000,810,710,213,610,720,381,628,856,854,646,92,247,642,558,835,784,601,400,907,297,813,902,611,937,970,462,810,571,417,308,546,633,432,323,168,469,865,1012,658,725,544,873,41,868,548,737,393};
             Tensor inputTensor = Tensor.fromBlob(data, new long[]{1, 64});
